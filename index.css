@@ -1,0 +1,9 @@
+#symptoms {
+    display: flex;
+    flex-flow: wrap;
+    flex-grow: 2;
+    align-items: center;
+}
+table {
+    margin-right: 10px;
+}

@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aktuelle Corona-Zahlen</title>
+    <link rel="stylesheet" href="numbers.css">
 </head>
 <body>
 <div id="cases-introduction">
@@ -13,7 +15,8 @@
     <p>Stand: 11. Januar 2021</p>
     <hr>
 </div>
-<div>
+<div id="cases">
+    <div class="grid-item">
     <form>
         <label for="filter">Geltungsbereich:</label>
         <select id="filter">
@@ -25,8 +28,9 @@
         <button id="submit" type="submit">Absenden</button>
         <button id="reset" type="reset">Zurücksetzen</button>
     </form>
-    <br>
-    <table id="cases" style="width: 100%; text-align: center">
+    </div>
+    <div class="grid-item">
+    <table id="cases-table" style="width: 100%; text-align: center">
         <tr>
             <th>Ort</th>
             <th>Fälle</th>
@@ -46,6 +50,7 @@
             <td>1.934.784</td>
         </tr>
     </table>
+    </div>
 </div>
 <p>Quelle: <a href="https://g.co/kgs/vpx1r7"><i>Google</i></a></p>
 
@@ -78,5 +83,7 @@
     </tr>
 </table>
 <p>Quelle: <a href="https://ourworldindata.org/covid-vaccinations"><i>Our World In Data</i></a> </p>
+<br><br>
+<a href="index.html">Zurück zur Startseite</a>
 </body>
 </html>
