@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aktuelle Corona-Zahlen</title>
+    <link href="caseNumbers.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="cases-introduction">
+    <h1>Aktuelle Corona-Zahlen</h1>
+    <a
+            href="https://upload.wikimedia.org/wikipedia/commons/2/21/SARS-CoV-2_virion_animation.gif"
+    ><img alt="Corona" height="40px" src="corona.png"
+    /></a>
+
+    <p>Stand: 11. Januar 2021</p>
+
+    <button onclick="addToFavorites('infections')" type="button">
+        Zu Favoriten hinzufügen
+    </button>
+    <hr/>
+</div>
+<div id="cases">
+    <form>
+        <div class="grid-item">
+            <label for="filter">Geltungsbereich:</label>
+            <select id="filter">
+                <option></option>
+                <option>Deutschland</option>
+                <option>Israel</option>
+                <option>Vereinigte Arabische Emirate</option>
+                <option>Vereinigtes Köngreich</option>
+                <option>Vereinigte Staaten von Amerika</option>
+                <option>Dänemark</option>
+                <option>Türkei</option>
+                <option>Schweiz</option>
+                <option>Chile</option>
+                <option>China</option>
+            </select>
+            <br/>
+            <button id="submit" id="submit" onclick="refreshPage()">Absenden</button>
+            <button id="reset" type="reset">Zurücksetzen</button>
+    </form>
+</div>
+<div class="grid-item">
+    <table id="cases-table" style="width: 100%; text-align: center;">
+        <tr>
+            <th>Ort</th>
+            <th>Fälle</th>
+            <th>Todesfälle</th>
+        </tr>
+        <tr>
+            <td>Wählen Sie einen Wert oben aus</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+    </table>
+</div>
+</div>
+<form>
+    <label for="comment">Kommentar hinzufügen:</label><br>
+    <input id="comment" name="comment" type="text"><br><br>
+    <input onclick="addComment('infections', document.getElementById('comment').value)" type="submit" value="Submit">
+</form>
+<table id="comments" style="width: 100%; text-align: center;">
+    <tr>
+        <th>Kommentare:</th>
+    </tr>
+    <tr>
+    </tr>
+</table>
+<p>
+    Quelle: <a
+        href="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.json"><i>Our
+    World In Data (via GitHub)</i></a>
+</p>
+<hr/>
+<a href="index.html">Zurück zur Startseite</a>
+<script src="general.js"></script>
+<script src="favorites.js"></script>
+<script src="caseNumbers.js"></script>
+<script src="comments.js"></script>
+<script>getComments("infections");</script>
+</body>
+</html>

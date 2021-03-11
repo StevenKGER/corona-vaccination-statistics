@@ -1,2 +1,2 @@
 # corona-vaccination-statistics
-A simple website to display vaccination statistics of the (federal states of the) Federal Republic of Germany.
+A simple website to display (vaccination) statistics of the top 10 vaccination countries.

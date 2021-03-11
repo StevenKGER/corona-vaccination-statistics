@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aktueller Impffortschritt</title>
+    <link href="vaccineNumbers.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="vaccination-introduction">
+    <h1>Impffortschritt</h1>
+    <a href="https://images.emojiterra.com/twitter/512px/1f489.png"
+    ><img alt="Spritze" height="40px" src="injection.png"
+    /></a>
+</div>
+<p>Stand: 11. Januar 2021</p>
+
+<button onclick="addToFavorites('vaccinations')" type="button">
+    Zu Favoriten hinzufügen
+</button>
+
+<hr/>
+
+<div id="Impffortschritt">
+    <div class="grid-item">
+        <form>
+            <label for="filter">Geltungsbereich:</label>
+            <select id="filter">
+                <option></option>
+                <option>Deutschland</option>
+                <option>Israel</option>
+                <option>Vereinigte Arabische Emirate</option>
+                <option>Vereinigtes Köngreich</option>
+                <option>Vereinigte Staaten von Amerika</option>
+                <option>Dänemark</option>
+                <option>Türkei</option>
+                <option>Schweiz</option>
+                <option>Chile</option>
+                <option>China</option>
+            </select>
+            <br/>
+            <button id="submit" onclick="refreshPage()" type="submit">Absenden</button>
+            <button id="reset" type="reset">Zurücksetzen</button>
+        </form>
+    </div>
+    <table id="vaccinations-table" style="width: 100%; text-align: center;">
+        <tr>
+            <th>Ort</th>
+            <th>Anzahl der durchgeführten Impfungen</th>
+        </tr>
+        <tr>
+            <td>Bitte auswählen</td>
+            <td>X</td>
+        </tr>
+    </table>
+    <p>
+        Quelle:
+        <a href="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json"
+        ><i>Our World In Data (via GitHub)</i></a
+        >
+    </p>
+    <br/><br/>
+    <form>
+        <label for="comment">Kommentar hinzufügen:</label><br>
+        <input id="comment" name="comment" type="text"><br><br>
+        <input onclick="addComment('vaccines', document.getElementById('comment').value)" type="submit" value="Submit">
+    </form>
+    <table id="comments" style="width: 100%; text-align: center;">
+        <tr>
+            <th>Kommentare:</th>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+    <a href="index.html">Zurück zur Startseite</a>
+    <script src="general.js"></script>
+    <script src="vaccineNumbers.js"></script>
+    <script src="favorites.js"></script>
+    <script src="comments.js"></script>
+    <script>getComments("vaccines");</script>
+</body>
+</html>

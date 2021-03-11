@@ -1,0 +1,19 @@
+{
+  "name": "corona-vaccination-statistics",
+  "version": "0.0.7",
+  "description": "Project to display stats about the COVID-19 pandemic and the progress of vaccinations in some countries",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "1.18.4",
+    "express": "4.17.1",
+    "express-http-context": "1.2.4",
+    "uuid": "8.3.2",
+    "cookie-parser": "1.4.5",
+    "node-fetch": "2.6.1"
+  },
+  "keywords": []
+}
